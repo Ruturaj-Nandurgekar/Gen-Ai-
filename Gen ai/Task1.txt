@@ -1,0 +1,19 @@
+Task 1: Conceptual Understanding
+
+1. Difference between "Love" and "love" in NLP
+In raw NLP, these are treated as two distinct tokens because computers use ASCII/Unicode values (where 'L' is 76 and 'l' is 108). This increases the vocabulary size unnecessarily. Standardizing to lowercase ensures the model recognizes them as the same semantic concept.
+
+2. What happens if stopwords are not removed?
+Stopwords (like "the", "is", "at") appear frequently but carry little unique meaning. If not removed, they can create "noise" in the data, causing models to give too much importance to filler words rather than the actual keywords that define the context.
+
+3. Scenarios where removing stopwords is harmful
+
+Sentiment Analysis: In the phrase "not good," removing "not" (a stopword) changes the meaning from negative to positive.
+
+Modern Language Models (Transformers): Models like BERT or GPT use the sequence and context of every word to understand nuance. Removing stopwords breaks the natural flow of the sentence.
+
+4. Stemming vs. Lemmatization
+
+Stemming: A "crude" chopping of the ends of words to find the root (e.g., "studies" becomes "studi"). It’s fast but often results in non-dictionary words.
+
+Lemmatization: Uses vocabulary and morphological analysis to return the word to its dictionary base form (e.g., "studies" becomes "study"). It is more accurate but computationally slower.
